@@ -1,0 +1,7 @@
+.DS_Store
+preprocessing/__pycache__/main.cpython-314.pyc
+preprocessing/fft_signals_fake.npy
+preprocessing/fft_signals_real.npy
+preprocessing/fft_signals_fake.npy
+preprocessing/fft_signals_real.npy
+*.npy
