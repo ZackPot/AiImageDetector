@@ -1,4 +1,4 @@
-AiImageDetector
+# AiImageDetector
 Detecting AI-generated images using PCA and FFT
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -13,7 +13,7 @@ AiImageDetector is a Python library that employs a logistic regression model, en
 *   **Visualizations**: Has a SHAP feature chart and a matplotlib graph showing the dominat feature's frequencies.
 
 ```bash
-git clone https://github.com/ZackPot/AiImageDetector/new/main?filename=README.md
+git clone https://github.com/ZackPot/AiImageDetector/
 cd AiImageDetector
 python3 test.py
 ```
