@@ -44,33 +44,32 @@ def FFT(batch):
 
     return normalized_spectrums
 
-if __name__ == "__main__":
-    device = torch.device('mps')
-    batch_size = 64
+device = torch.device('mps')
+batch_size = 64
 
-    dataset_ai = load_dataset(
-        "poloclub/diffusiondb",
-        split="train",
-        streaming=True
-    )
+dataset_ai = load_dataset(
+    "poloclub/diffusiondb",
+    split="train",
+    streaming=True
+)
 
-    dataset_real = load_dataset(
-        "bitmind/MS-COCO",
-        split="train",
-        streaming=True
-    )
+dataset_real = load_dataset(
+    "bitmind/MS-COCO",
+    split="train",
+    streaming=True
+)
 
-    dataloader_ai = DataLoader(
-        dataset_ai,
-        batch_size=batch_size,
-        collate_fn=lambda x: x,
-    )
+dataloader_ai = DataLoader(
+    dataset_ai,
+    batch_size=batch_size,
+    collate_fn=lambda x: x,
+)
 
-    dataloader_real = DataLoader(
-        dataset_real,
-        batch_size=batch_size,
-        collate_fn=lambda x: x,
-    )
+dataloader_real = DataLoader(
+    dataset_real,
+    batch_size=batch_size,
+    collate_fn=lambda x: x,
+)
 
-    apply_transforms(device, dataloader_ai, pre_process_func, FFT, 'fft_signals_fake.npy', 2500)
-    apply_transforms(device, dataloader_real, pre_process_func, FFT, 'fft_signals_real.npy', 2500)
+apply_transforms(device, dataloader_ai, pre_process_func, FFT, 'fft_signals_fake.npy', 2500)
+apply_transforms(device, dataloader_real, pre_process_func, FFT, 'fft_signals_real.npy', 2500)
