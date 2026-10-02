@@ -9,11 +9,11 @@ import shap
 real = np.load('preprocessing/fft_signals_real.npy')
 fake = np.load('preprocessing/fft_signals_fake.npy')
 
-ones = np.ones((len(real))).reshape(-1, 1)
-zeros = np.zeros((len(real))).reshape(-1, 1)
+ones = np.ones((len(fake), 1))
+zeros = np.zeros((len(real), 1))
 
 real = np.hstack((real.reshape(len(real), -1), zeros))
-fake = np.hstack((fake.reshape(len(real), -1), ones))
+fake = np.hstack((fake.reshape(len(fake), -1), ones))
 df = np.vstack((real, fake))
 
 y = df[:, -1]
